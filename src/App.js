@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route, Link} from 'react-router-dom';
+import axios from "axios";
 
 import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
 import AddFriend from "./components/AddFriend";
+import Logout from "./components/Logout";
 
 
 function App() {
-  
 
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
           <Link className="App-link" to="/login">Login</Link>
           <Link className="App-link" to="/friends">Friends List</Link>
           <Link className="App-link" to="/add">Add Friend</Link>
-          <Link className="App-link" to="">Log Out</Link>
+          <Link className="App-link" to="/logout">Log Out</Link>
         </nav>
       </header>
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/friends" component={FriendsList}/>
           <Route path="/add" component={AddFriend} />
+          <Route path="/logout" component={Logout} />
         </Switch>
         
           
