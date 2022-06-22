@@ -21,7 +21,6 @@ function Login(props) {
         event.preventDefault();
         axios.post("http://localhost:9000/api/login", { username: form.username, password: form.password })
             .then(res => {
-                console.log(res.data.token)
                 localStorage.setItem("token", res.data.token)
                 props.history.push("/friendslist")
             })
