@@ -23,4 +23,7 @@ nav {
   margin: 2%;
 }
 
-
+.friends-container {
+  display: flex;
+  flex-direction: column;
+}
