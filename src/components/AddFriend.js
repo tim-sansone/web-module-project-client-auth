@@ -6,7 +6,7 @@ const initialValues = {
     email: ""
 }
 
-function AddFriend() {
+function AddFriend(props) {
     const [form, setForm] = useState(initialValues)
 
     const handleChange = event => {
@@ -25,7 +25,7 @@ function AddFriend() {
             }
         })
         .then(res => {
-            console.log(res)
+            props.history.push("/friends");
         })
         .catch(err => {
             console.log(err)

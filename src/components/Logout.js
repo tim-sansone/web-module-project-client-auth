@@ -4,6 +4,7 @@ import axios from "axios";
 function Logout(props) {
 
     useEffect(() => {
+      if(localStorage.getItem("token")){
         axios.post("http://localhost:9000/api/logout", null, {
           headers: {
             authorization: localStorage.getItem("token")
@@ -14,10 +15,12 @@ function Logout(props) {
           props.history.push("/login")
         })
         .catch(err => console.log(err))
-      }, [])
+      }
+        
+    },[])
 
     return (
-        <h2>Logging Out...</h2>
+        <h2>Logging out....</h2>
     )
 }
 
