@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axiosAuth from "./axiosAuth";
 
 const initialValues = {
     name: "",
@@ -19,11 +19,7 @@ function AddFriend(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.post("http://localhost:9000/api/friends", { name: form.name, email: form.email }, {
-            headers: {
-                authorization: localStorage.getItem("token")
-            }
-        })
+        axiosAuth().post("/friends", { name: form.name, email: form.email })
         .then(res => {
             props.history.push("/friends");
         })

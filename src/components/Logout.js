@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import axiosAuth from "./axiosAuth";
 
 function Logout(props) {
 
     useEffect(() => {
       if(localStorage.getItem("token")){
-        axios.post("http://localhost:9000/api/logout", null, {
-          headers: {
-            authorization: localStorage.getItem("token")
-          }
-        })
+        axiosAuth().post("/logout")
         .then(res => {
           localStorage.removeItem("token")
           props.history.push("/login")

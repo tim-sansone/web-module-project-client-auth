@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route, Link} from 'react-router-dom';
-import axios from "axios";
+
 
 import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
